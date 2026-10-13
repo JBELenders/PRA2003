@@ -1,4 +1,4 @@
-# PRA2003 – Bacteria per event and WT–mutant asymmetry (Group R2)
+# PRA2003 – Bacteria per event and WT–mutant asymmetry
 
 Counting bacterial strains per event in a sample of 5M events, and testing
 whether each normal (wild-type, WT) strain occurs as often as its mutant,
@@ -29,7 +29,7 @@ and E. coli mutant = -211). The three questions are:
 2. Is there an **asymmetry** between the WT and the mutant? (Sections 6.2, 6.3)
 3. Does the asymmetry depend on **momentum**? (Section 6.4)
 
-Our group (R2) was assigned the pairs 2212/-2212 (*Pseudomonas aeruginosa*)
+The pairs assigned for this analysis are 2212/-2212 (*Pseudomonas aeruginosa*)
 and 3122/-3122 (*Streptococcus pneumoniae*). The analysis covers all six
 WT/mutant pairs.
 
@@ -62,6 +62,7 @@ depend significantly on momentum (all slopes are below 1σ).
 | `asymmetry_per_bin.csv` | Asymmetry per pair and momentum bin |
 | `momentum_fits.csv` | Constant fit and slope per pair |
 | `asymmetry_vs_momentum.png` | The plot of Section 6.4 |
+| `Week6-Presentation.pdf` | The presentation |
 
 The raw data files (`output-Set1.txt` … `output-Set10.txt`, about 800 MB
 each) are **not** included in the repository due to their size. They can be
@@ -315,7 +316,7 @@ than mutant:
 - *Streptococcus pneumoniae* (3122): A = (0.89 ± 0.11)%, 8.4σ
 - *E. coli* (211): A = (0.081 ± 0.011)%, 7.2σ
 
-All three are well above the 3σ threshold we use. Among the 12 additional
+All three are well above the 3σ threshold used. Among the 12 additional
 pairs of Section 6.3 only 3112/-3112 is above 3σ (4.4σ, A = 0.68%).
 
 **No asymmetry is seen** for *B. subtilis* (1.7σ), *M. tuberculosis* (0.9σ)
