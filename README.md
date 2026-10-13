@@ -255,9 +255,15 @@ standard deviation over the 10 files, and the grey horizontal bar is the
 range of the bin (the first bin starts at 0 and the last bin is open-ended,
 drawn as wide as the one before it for display only). The red line is the
 constant fit with its ±1σ band, the dotted line marks A = 0. Each panel has
-its own y-axis.
+its own y-axis. For P. aeruginosa, S. pneumoniae and E. coli the asymmetry is 
+positive in every bin and follows a flat line (slopes below 1σ), so the wild 
+type excess does not depend on momentum. For the other three pairs the error 
+bars are consistent with zero. The error bar of the last bin is larger than 
+that of the previous bin for all pairs.
 
-(This figure is generated as one, but is specifically designed so it can be cut into six seperate figures.)
+(This figure is generated as one (six plots in one figure), but is 
+specifically designed so it can be cut into six seperate figures, which was 
+handy for the presentation.)
 
 Asymmetry A (%) per momentum bin, mean ± standard deviation over the 10
 files (`asymmetry_per_bin.csv`; momentum ranges in 10⁻²⁰ kg m/s):
