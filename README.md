@@ -249,8 +249,7 @@ The same test applied to the 12 other pairs of IDs in the data:
 
 ### 6.4 Asymmetry as a function of momentum
 
-<img width="2000" height="1200" alt="asymmetry_vs_momentum" src="https://github.com/user-attachments/assets/5fd21086-9228-4a17-8d45-8586098951e7" />
-asymmetry_vs_momentum.png
+https://github.com/JBELenders/PRA2003_Week4/blob/71c3de60f2a7f1e5d52e8ed525e84e82400a8008/asymmetry_vs_momentum.png
 
 **Figure 1.** Asymmetry A = (N_WT − N_mutant) / (N_WT + N_mutant) in % as a
 function of momentum |p| (units 10⁻²⁰ kg m/s), one panel per pair, using all
