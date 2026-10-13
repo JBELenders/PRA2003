@@ -29,17 +29,15 @@ and E. coli mutant = -211). The three questions are:
 2. Is there an **asymmetry** between the WT and the mutant? (Sections 6.2, 6.3)
 3. Does the asymmetry depend on **momentum**? (Section 6.4)
 
-The pairs assigned for this analysis are 2212/-2212 (*Pseudomonas aeruginosa*)
-and 3122/-3122 (*Streptococcus pneumoniae*). The analysis covers all six
-WT/mutant pairs.
+The analysis covers all six WT/mutant pairs.
 
 **Short answer.** Yes, there is an asymmetry for three of the six pairs, and
 in all of them the wild type is the more common form:
 
 | Pair | Asymmetry A | Significance |
 |---|---:|---:|
-| 2212 / -2212 *P. aeruginosa* (assigned) | (1.00 ± 0.10)% | 10.0σ |
-| 3122 / -3122 *S. pneumoniae* (assigned) | (0.89 ± 0.11)% | 8.4σ |
+| 2212 / -2212 *P. aeruginosa* | (1.00 ± 0.10)% | 10.0σ |
+| 3122 / -3122 *S. pneumoniae* | (0.89 ± 0.11)% | 8.4σ |
 | 211 / -211 *E. coli* | (0.081 ± 0.011)% | 7.2σ |
 
 The other three pairs (*B. subtilis*, *M. tuberculosis*, *Salmonella*) are
@@ -62,7 +60,6 @@ depend significantly on momentum (all slopes are below 1σ).
 | `asymmetry_per_bin.csv` | Asymmetry per pair and momentum bin |
 | `momentum_fits.csv` | Constant fit and slope per pair |
 | `asymmetry_vs_momentum.png` | The plot of Section 6.4 |
-| `Week6-Presentation.pdf` | The presentation |
 
 The raw data files (`output-Set1.txt` … `output-Set10.txt`, about 800 MB
 each) are **not** included in the repository due to their size. They can be
@@ -118,7 +115,7 @@ below, except for the 12 extra pairs of Section 6.3.
 3. **Central value (Section 6.1):** the inverse-variance weighted average of
    the 10 sub-sample results (weight = 1 / uncertainty² per sub-sample).
 4. **Statistical uncertainty:** the standard deviation of the 10 sub-sample
-   results.
+   results (not divided by √10).
 
 The standard deviation describes how much the result varies from one
 sub-sample of about 500K events to another. Only the statistical uncertainty
@@ -152,8 +149,7 @@ asymmetries here are plain means of the per-file values.
 2. The momentum range is divided into **5 bins**, each holding about 20% of
    the bacteria of Set 1 (quantiles of Set 1). The same edges are used for
    all 10 files. The first and last bin are open-ended, so every bacterium
-   is counted. Because the bins are quantiles, their widths grow roughly
-   by a factor 2 from one bin to the next.
+   is counted.
 3. In each file and each bin, the asymmetry A is calculated. The point of a
    bin is the mean over the 10 files and its error bar is the standard
    deviation over the 10 files.
@@ -249,7 +245,7 @@ The same test applied to the 12 other pairs of IDs in the data:
 
 ### 6.4 Asymmetry as a function of momentum
 
-https://github.com/JBELenders/PRA2003_Week4/blob/71c3de60f2a7f1e5d52e8ed525e84e82400a8008/asymmetry_vs_momentum.png
+<img width="2000" height="1200" alt="asymmetry_vs_momentum" src="https://github.com/user-attachments/assets/853da404-1312-47e2-9541-aa617aeb09d5" />
 
 **Figure 1.** Asymmetry A = (N_WT − N_mutant) / (N_WT + N_mutant) in % as a
 function of momentum |p| (units 10⁻²⁰ kg m/s), one panel per pair, using all
@@ -259,12 +255,9 @@ standard deviation over the 10 files, and the grey horizontal bar is the
 range of the bin (the first bin starts at 0 and the last bin is open-ended,
 drawn as wide as the one before it for display only). The red line is the
 constant fit with its ±1σ band, the dotted line marks A = 0. Each panel has
-its own y-axis. The blue numbers under the x-axis are the bin numbers (1 to 5)
-used for the slope; bin 5 is open-ended. For *P. aeruginosa*, *S. pneumoniae* and *E. coli* the points
-lie above zero in every bin and follow a flat line: the asymmetry is
-present at all momenta but does not grow or shrink with momentum. For the
-other three pairs the error bars are consistent with zero. The last bin has
-the largest error bar for most pairs.
+its own y-axis.
+
+(This figure is generated as one, but is specifically designed so it can be cut into six seperate figures.)
 
 Asymmetry A (%) per momentum bin, mean ± standard deviation over the 10
 files (`asymmetry_per_bin.csv`; momentum ranges in 10⁻²⁰ kg m/s):
@@ -289,9 +282,10 @@ Constant fit and slope (`momentum_fits.csv`; slope in % per bin number):
 | *M. tuberculosis* | 0.54 ± 0.58 | 0.9σ | 0.2/4 (0.99) | 0.19 ± 0.82 | 0.2σ |
 | *Salmonella* | 2.3 ± 3.5 | 0.7σ | 0.07/4 (1.00) | −0.9 ± 4.4 | −0.2σ |
 
-- **No momentum dependence.** All six slopes are below 1σ (the largest is
-  0.9σ, *E. coli*), far from the 3σ criterion. All χ²/ndf values are at or
-  below 1.6/4, so a constant describes the 5 bins of every pair well.
+- **No significant momentum dependence.** All six slopes are below 1σ (the
+  largest is 0.9σ, *E. coli*), far from the 3σ criterion. All χ²/ndf values
+  are at or below 1.6/4, so a constant describes the 5 bins of every pair
+  well.
 - **The asymmetry is the same at all momenta.** For the three significant pairs
   the constant is positive and consistent with the overall values of
   Section 6.2. The constant fit is a weighted mean over the 5 bins, so its
@@ -303,10 +297,6 @@ Constant fit and slope (`momentum_fits.csv`; slope in % per bin number):
   middle of the momentum range where the uncertainties are smallest. The
   rare strains (*M. tuberculosis*, *Salmonella*) have too few bacteria per
   bin to show anything.
-- **Relation to the presentation.** The presentation (slide 9) plotted the
-  count difference N_WT − N_mutant per bin for E. coli and Salmonella, with
-  slopes of 1.9σ and 0.1σ. Here the relative asymmetry is used for all six
-  pairs. Both give the same conclusion: no significant momentum dependence.
 
 ## 7. Conclusion: do we see an asymmetry?
 
@@ -322,20 +312,23 @@ pairs of Section 6.3 only 3112/-3112 is above 3σ (4.4σ, A = 0.68%).
 
 **No asymmetry is seen** for *B. subtilis* (1.7σ), *M. tuberculosis* (0.9σ)
 and *Salmonella* (0.5σ). For *M. tuberculosis* and especially *Salmonella* the
-result is limited by the number of bacteria, so small asymmetries (about 2%
+result is limited by the number of bacteria, so small asymmetries (about 2.4%
 and about 10%, respectively) cannot be excluded.
 
-**The asymmetry does not depend on momentum.** For all six pairs the slope
-is below 1σ and a constant asymmetry describes the data in the 5 momentum
-bins well.
+**The asymmetry does not depend significantly on momentum.** For all six
+pairs the slope is below 1σ and a constant asymmetry describes the data in
+the 5 momentum bins well.
 
 ## 8. Notes and limitations
 
-- **Meaning of the uncertainty.** The quoted uncertainty is the spread of
-  one 500K-event sub-sample (standard deviation over the 10 files). The
-  uncertainty of the average over all 10 sub-samples is smaller by a factor
-  of about √10 (the standard error of the mean). Significances in Sections
-  6.2 and 6.4 use the standard deviation, so they are conservative.
+- **Meaning of the uncertainty.** The quoted uncertainty is the standard
+  deviation over the 10 sub-samples, as the sub-sampling method prescribes.
+  It describes how much the result varies from one 500K-event sub-sample to
+  another and is **not** divided by √10 (that would give the standard error
+  of the mean of all 10 sub-samples, which is smaller by a factor of about
+  √10). This also means that a small real momentum dependence could
+  stay below the significance threshold: "no momentum dependence" in this
+  README means "no significant dependence at this precision".
 - **Statistical only.** No systematic uncertainty was estimated.
 - **Wild type vs mutant.** The counts of a wild type and its mutant come from
   the same events and can be correlated, so the uncertainty on their
@@ -349,19 +342,20 @@ bins well.
   382,007 events (about 7.6%) were empty and excluded. The number of events
   per file used in Section 6.2 is recovered as total count / average per
   event for E. coli WT, whose large average makes the rounding negligible.
-- **Momentum bins.** The bin edges come from Set 1 only and are used for all
+- **Momentum bins.** The bin edges are based of of Set 1 and was then used for all
   files, so the bins hold about 20% of the bacteria each in Set 1 but not
-  necessarily in the other files. The first and last bin are open-ended; the
+  necessarily in the other files. The last bin is open-ended; the
   width of the last bin in Figure 1 is for display only. The slope is in %
   per bin number, not per unit of momentum.
-- **Small χ² values.** The χ²/ndf of the constant fits are all below 1.6/4
+- **Small x² values.** The x²/ndf of the constant fits are all below 1.6/4
   (p-values 0.80 – 1.00), meaning the bins scatter less than their error bars
-  suggest. The error bars are therefore on the conservative side.
-- **Large error bar in the last bin.** The last momentum bin has the
-  largest error bar for most pairs. It holds bacteria with the highest
-  momenta, and the spread between files is largest there. **TODO: check the
-  counts per bin in each file (for example Set 10) before stating the cause.**
-- **Multiple tests.** About 40 asymmetry values were tested at the 3σ level
-  (6 pairs, 12 extra pairs and 30 momentum bins). A single result slightly
-  above 3σ, such as 3112/-3112 or a single momentum bin, could occur by
-  chance, while the 7–10σ results of Section 6.2 could not.
+  suggest. This is expected: each point is a mean of 10 files, but its error
+  bar is the spread of single files (not divided by √10), so the points
+  scatter less than the error bars. The error bars are therefore on the
+  conservative side.
+- **Error bars in the last bin.** The last momentum bin has a larger error
+  bar than the bin before it for all six pairs, and the largest of all five
+  bins for *P. aeruginosa*, *E. coli* and *B. subtilis*. For
+  *S. pneumoniae*, *M. tuberculosis* and *Salmonella* the first bin has the
+  largest error bar. The counts per bin in each file were not examined in
+  detail, so no cause is stated.
